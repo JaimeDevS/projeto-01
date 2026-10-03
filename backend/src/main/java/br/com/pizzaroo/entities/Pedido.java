@@ -1,7 +1,6 @@
 package br.com.pizzaroo.entities;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,8 +36,7 @@ public class Pedido {
 	@Column(nullable = false, unique = true)
 	private Long numeroPedido;	
 	
-	private LocalTime horaPedido;
-	private LocalDate dataPedido;
+	private LocalDateTime dataHoraPedido;
 	
 	@Enumerated(EnumType.STRING)
 	private SituacaoPedido situacaoPedido;
