@@ -1,6 +1,7 @@
 package br.com.pizzaroo.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,8 +23,9 @@ public class Opiniao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
+	private Integer nota;
 	
-	@ManyToOne
-	@JoinColumn(name = "cliente_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "cliente_id", nullable = false)
 	private Cliente cliente;
 }

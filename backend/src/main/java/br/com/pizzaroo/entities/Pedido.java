@@ -52,6 +52,14 @@ public class Pedido {
 	
 	@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ItemBebida> bebidas = new ArrayList<>();
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "funcionario_preparacao_id")
+	private Funcionario funcionarioPreparacao;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "funcionario_entrega_id")
+	private Funcionario funcionarioEntrega;
 }
 
 
